@@ -7,6 +7,12 @@
     ? (($result ? 'YES' : 'NO') . '! Valter ' . ($result ? 'owns' : 'does not own') . ' ' . $gameName . ' on Steam.')
     : 'Check whether Valter owns a game on Steam.')
 
+@if(isset($result, $gameName))
+@section('og_image', isset($tinyImage) && $tinyImage
+    ? $tinyImage
+    : url('/og-image?' . http_build_query(['title' => $gameName, 'owned' => $result ? '1' : '0'])))
+@endif
+
 @section('nav')
     <a href="/recent" class="nav-link">Recent</a>
 @endsection
@@ -182,6 +188,7 @@
                 value="{{ isset($gameName) ? e($gameName) : '' }}"
             />
             <input type="hidden" id="app-id" name="app_id" />
+            <input type="hidden" id="tiny-image" name="tiny_image" />
             <div class="autocomplete-list" id="autocomplete-list"></div>
         </div>
         <button type="submit">Does Valter have it?</button>
@@ -269,6 +276,7 @@
         function selectItem(i) {
             input.value      = suggestions[i].name;
             appIdInput.value = suggestions[i].id;
+            document.getElementById('tiny-image').value = suggestions[i].tiny_image || '';
             hideList();
         }
 

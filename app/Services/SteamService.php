@@ -34,9 +34,10 @@ class SteamService
             \Log::debug('Steam search response', ['query' => $query, 'response' => $response->json()]);
 
             return array_map(fn ($item) => [
-                'id'   => $item['id'],
-                'name' => $item['name'],
-                'type' => strtolower($item['type'] ?? 'app'),
+                'id'         => $item['id'],
+                'name'       => $item['name'],
+                'type'       => strtolower($item['type'] ?? 'app'),
+                'tiny_image' => $item['tiny_image'] ?? null,
             ], $response->json('items') ?? []);
         });
     }

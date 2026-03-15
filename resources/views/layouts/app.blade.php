@@ -11,6 +11,11 @@
     <meta property="og:description" content="@yield('og_description', 'Check whether Valter owns a game on Steam.')">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
+    @hasSection('og_image')
+    <meta property="og:image" content="@yield('og_image')">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    @endif
 
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
