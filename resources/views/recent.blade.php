@@ -6,6 +6,7 @@
 
 @section('nav')
     <a href="/" class="nav-link">Back</a>
+    <a href="/api/docs" class="nav-link">API</a>
 @endsection
 
 @section('styles')

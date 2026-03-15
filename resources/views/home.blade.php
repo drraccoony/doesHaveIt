@@ -15,6 +15,7 @@
 
 @section('nav')
     <a href="/recent" class="nav-link">Recent</a>
+    <a href="/api/docs" class="nav-link">API</a>
 @endsection
 
 @section('styles')

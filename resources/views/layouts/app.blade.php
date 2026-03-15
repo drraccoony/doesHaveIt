@@ -32,10 +32,15 @@
             padding: 2rem;
         }
 
-        .nav-link {
+        .nav-links {
             position: fixed;
             top: 1.25rem;
             right: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .nav-link {
             font-family: Arial, sans-serif;
             font-size: 0.95rem;
             color: #66c0f4;
@@ -68,7 +73,9 @@
     </style>
 </head>
 <body>
-    @yield('nav')
+    <div class="nav-links">
+        @yield('nav')
+    </div>
 
     @yield('content')
 
