@@ -5,7 +5,7 @@
 @section('og_description', "See the 5 games Valter has played most recently on Steam.")
 
 @section('nav')
-    <a href="/" class="nav-link">← Back</a>
+    <a href="/" class="nav-link">Back</a>
 @endsection
 
 @section('styles')

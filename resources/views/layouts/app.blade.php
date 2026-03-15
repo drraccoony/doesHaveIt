@@ -43,12 +43,32 @@
         }
         .nav-link:hover { background: #1e3d56; }
 
-        @yield('styles')
+        footer {
+            position: fixed;
+            bottom: 1rem;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.78rem;
+            color: #4a6174;
+            font-family: Arial, sans-serif;
+        }
+        footer a {
+            color: #4a6174;
+            text-decoration: none;
+        }
+        footer a:hover { color: #8cb4d0; }
+
+        @yield('styles');
     </style>
 </head>
 <body>
     @yield('nav')
 
     @yield('content')
+
+    <footer>
+        Violating Valter's Privacy with ♥ by <a href="https://github.com/drraccoony/doesHaveIt" target="_blank" rel="noopener">Rico</a> with Laravel
+    </footer>
 </body>
 </html>
