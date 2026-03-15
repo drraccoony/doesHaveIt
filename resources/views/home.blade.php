@@ -72,7 +72,23 @@
             cursor: pointer;
             font-size: 0.95rem;
             font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
+
+        .autocomplete-badge {
+            font-size: 0.65rem;
+            font-weight: bold;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .autocomplete-badge.dlc  { background: #4a3060; color: #c09fdf; }
+        .autocomplete-badge.mod  { background: #1e3d56; color: #66c0f4; }
+        .autocomplete-badge.music { background: #1e3d26; color: #5ba32b; }
 
         .autocomplete-item:hover,
         .autocomplete-item.active {
@@ -229,7 +245,18 @@
             suggestions.forEach((item, i) => {
                 const div = document.createElement('div');
                 div.className = 'autocomplete-item';
-                div.textContent = item.name;
+
+                const name = document.createElement('span');
+                name.textContent = item.name;
+                div.appendChild(name);
+
+                if (item.type && item.type !== 'app' && item.type !== 'game') {
+                    const badge = document.createElement('span');
+                    badge.className = 'autocomplete-badge ' + item.type;
+                    badge.textContent = item.type;
+                    div.appendChild(badge);
+                }
+
                 div.addEventListener('mousedown', (e) => {
                     e.preventDefault();
                     selectItem(i);
