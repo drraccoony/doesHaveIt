@@ -68,7 +68,7 @@
     @yield('content')
 
     <footer>
-        Violating Valter's Privacy with ♥ by <a href="https://github.com/drraccoony/doesHaveIt" target="_blank" rel="noopener">Rico</a> with Laravel
+        Violating Valter's Privacy with ♥ by <a href="https://github.com/drraccoony/doesHaveIt" target="_blank" rel="noopener">Rico</a> using Laravel
     </footer>
 </body>
 </html>
