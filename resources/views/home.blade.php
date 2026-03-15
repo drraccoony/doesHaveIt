@@ -143,41 +143,13 @@
             color: #8cb4d0;
             font-family: Arial, sans-serif;
         }
-
-        .debug-panel {
-            margin-top: 1.5rem;
-            background: #0d1b27;
-            border: 1px solid #2a475e;
-            border-radius: 4px;
-            padding: 0.85rem 1.1rem;
-            font-family: monospace;
-            font-size: 0.8rem;
-            color: #7097af;
-            text-align: left;
-            width: 500px;
-            max-width: 100%;
-        }
-        .debug-panel dt {
-            color: #4a6174;
-            display: inline;
-        }
-        .debug-panel dd {
-            color: #8cb4d0;
-            display: inline;
-            margin: 0;
-        }
-        .debug-panel .debug-row {
-            margin-bottom: 0.3rem;
-        }
 @endsection
 
 @section('content')
     <h1>DoesValterHaveIt?</h1>
 
-    <form action="/" method="GET" id="game-form" class="form-wrapper">
-        @if($debug)
-            <input type="hidden" name="debug" value="">
-        @endif
+    <form action="/" method="POST" id="game-form" class="form-wrapper">
+        @csrf
         <div class="search-wrapper">
             <input
                 type="text"
@@ -200,14 +172,6 @@
                 {{ $result ? 'YES' : 'NO' }}
             </div>
             <div class="game-label">{{ $gameName }}</div>
-
-            @if (!empty($debugInfo))
-                <dl class="debug-panel">
-                    @foreach ($debugInfo as $key => $value)
-                        <div class="debug-row"><dt>{{ $key }}: </dt><dd>{{ $value }}</dd></div>
-                    @endforeach
-                </dl>
-            @endif
         </div>
     @endisset
 
