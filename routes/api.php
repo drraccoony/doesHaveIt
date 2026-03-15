@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\SwaggerController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/docs', [SwaggerController::class, 'ui']);
+Route::get('/docs/spec', [SwaggerController::class, 'spec']);
 
 Route::middleware('throttle:api')->group(function () {
     Route::get('/check/appid/{appId}', [ApiController::class, 'checkByAppId'])
