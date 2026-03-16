@@ -53,6 +53,13 @@
         }
         .nav-link:hover { background: #1e3d56; }
 
+        .nav-link--premium {
+            background: #3b2800;
+            border-color: #f4a020;
+            color: #f4a020;
+        }
+        .nav-link--premium:hover { background: #502f00; }
+
         footer {
             position: fixed;
             bottom: 1rem;

@@ -10,3 +10,4 @@ Route::get('/game/{appId}', [GameController::class, 'result'])->where('appId', '
 Route::get('/autocomplete', [GameController::class, 'autocomplete']);
 Route::get('/recent', [GameController::class, 'recent']);
 Route::get('/og-image', [OgImageController::class, 'generate']);
+Route::get('/premium', fn () => view('premium'));

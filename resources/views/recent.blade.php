@@ -7,6 +7,7 @@
 @section('nav')
     <a href="/" class="nav-link">Back</a>
     <a href="/api/docs" class="nav-link">API</a>
+    <a href="/premium" class="nav-link nav-link--premium">✦ Premium</a>
 @endsection
 
 @section('styles')
